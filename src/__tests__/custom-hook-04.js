@@ -25,12 +25,14 @@ test('allows customization of the step', () => {
 })
 
 test('the step can be changed', () => {
+  // renderHook provides a rerender that will allow us to check change over time
   const {result, rerender} = renderHook(useCounter, {
     initialProps: {step: 3},
   })
   expect(result.current.count).toBe(0)
   act(() => result.current.increment())
   expect(result.current.count).toBe(3)
+  // trigger a rerender with a new prop value
   rerender({step: 2})
   act(() => result.current.decrement())
   expect(result.current.count).toBe(1)
