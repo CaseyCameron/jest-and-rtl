@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {render, screen, within} from '@testing-library/react'
+import {render, within} from '@testing-library/react'
 import {Modal} from '../modal'
 
 test('modal shows the children', () => {
